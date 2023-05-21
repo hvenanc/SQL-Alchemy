@@ -25,3 +25,9 @@ class LinhaRepository:
             db.session.query(Linha).filter(Linha.codigo == codigo).update(dados)
             db.session.commit()
     
+    def select_codigo(self,codigo):
+        with DBConnectionHandler() as db:
+            data = db.session.query(Linha).filter(Linha.codigo == codigo).one()
+            data = {'codigo':data.codigo,'nome':data.nome,'tarifa': float(data.tarifa),'ar_condicionado':data.ar_condicionado,'integracao':data.integracao}
+            return data
+    
