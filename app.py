@@ -7,5 +7,5 @@ linha = LinhaRepository()
 
 #     linha.insert(x['codigo'],x['nome'],x['tarifa'],x['ar-condicionado'],x['integracao'])
 #linha.update(202,'T.I Barro/T.I Macaxeira(VARZEA)',4.10,'nao','sim')
-response = linha.select()
+response = linha.select_codigo(200)
 print(response)
